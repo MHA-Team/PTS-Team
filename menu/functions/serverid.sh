@@ -74,7 +74,7 @@ recreatefolder() {
 conf="/opt/appdata/plexguide/rclone.conf"
 if [[ -e "$conf" ]]; then
         start=$(cat /var/plexguide/server.id)
-        serveridcreate=$(tree -d -L 1 /mnt/gdrive/backup | awk '{print $2}' | tail -n +2 | head -n -2 | grep "$(cat /var/plexguide/server.id)")
+        serveridcreate=$(tree -d -L 1 /mnt/gdrive/systems | awk '{print $2}' | tail -n +2 | head -n -2 | grep "$(cat /var/plexguide/server.id)")
         if [[ $start != $serveridcreate ]]; then
         rclone mkdir gdrive:/backup/$(cat /var/plexguide/server.id) --config /opt/appdata/plexguide/rclone.conf;fi
 tee <<-EOF
