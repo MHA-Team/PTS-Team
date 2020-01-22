@@ -314,10 +314,10 @@ vfs_mt="$(cat /var/plexguide/vfs_mt)"
 vfs_t="$(cat /var/plexguide/vfs_t)"
 vfs_c="$(cat /var/plexguide/vfs_c)"
 
-  rclone --config /opt/appdata/plexguide/rclone.conf mkdir gdrive:/plexguide/backup/${server_id} 1>/dev/null 2>&1
+  rclone --config /opt/appdata/plexguide/rclone.conf mkdir gdrive:/backup/${server_id} 1>/dev/null 2>&1
 
   rclone moveto ${tarlocation}/${program_var}.tar \
-    gdrive:/plexguide/backup/${server_id}/${program_var}.tar \
+    gdrive:/backup/${server_id}/${program_var}.tar \
 	--config /opt/appdata/plexguide/rclone.conf \
 	-v --checksum --stats-one-line --stats 1s --progress \
 	--tpslimit=10 \

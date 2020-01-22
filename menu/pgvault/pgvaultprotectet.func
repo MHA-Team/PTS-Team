@@ -319,10 +319,10 @@ vfs_t="$(cat /var/plexguide/vfs_t)"
 vfs_c="$(cat /var/plexguide/vfs_c)"
 
 
-  rclone --config /opt/appdata/plexguide/rclone.conf mkdir gdrive:/plexguide/backup/${server_id}/protected/ 1>/dev/null 2>&1
+  rclone --config /opt/appdata/plexguide/rclone.conf mkdir gdrive:/backup/${server_id}/protected/ 1>/dev/null 2>&1
 
   rclone moveto ${tarlocation}/${program_var}.tar.gz \
-    gdrive:/plexguide/backup/${server_id}/protected/${program_var}.tar.gz \
+    gdrive:/backup/${server_id}/protected/${program_var}.tar.gz \
 	--config /opt/appdata/plexguide/rclone.conf \
 	-v --checksum --stats-one-line --stats 1s --progress \
 	--tpslimit=10 \
@@ -420,7 +420,7 @@ EOF
         vfs_c="$(cat /var/plexguide/vfs_c)"
 
 
-rclone copy gdrive:/plexguide/backup/${srecall}/protected/${program_var}.tar.gr  ${tarlocation} \
+rclone copy gdrive:/backup/${srecall}/protected/${program_var}.tar.gr  ${tarlocation} \
 	--config /opt/appdata/plexguide/rclone.conf \
 	-v --checksum --stats-one-line --stats 1s --progress \
 	--tpslimit=10 \

@@ -12,7 +12,7 @@ tee <<-EOF
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 The Restore ID is an ID of an OLD SERVER! If you are unsure of your
 prior server names, visit https://drive.google.com - From here, goto
-/plexguide/backup and you should see the list there!
+/backup and you should see the list there!
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 EOF
@@ -42,7 +42,7 @@ EOF
 else
 
   # Recalls for to check existance
-  rcheck=$(rclone --config /opt/appdata/plexguide/rclone.conf ls gdrive:/plexguide/backup/$typed)
+  rcheck=$(rclone --config /opt/appdata/plexguide/rclone.conf ls gdrive:/backup/$typed)
   if [ "$rcheck" == "" ]; then
     tee <<-EOF
 
