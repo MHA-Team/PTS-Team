@@ -42,7 +42,7 @@ EOF
     echo "$typed" >${abc}/server.id
     cat ${abc}/server.id >${abc}/server.id.stored
          start=$(cat /var/plexguide/server.id)
-         serveridcreate=$(tree -d -L 1 /mnt/gdrive/plexguide/backup | awk '{print $2}' | tail -n +2 | head -n -2 | grep "$(cat /var/plexguide/server.id)")
+         serveridcreate=$(tree -d -L 1 /mnt/gdrive/backup | awk '{print $2}' | tail -n +2 | head -n -2 | grep "$(cat /var/plexguide/server.id)")
          if [[ $start != $serveridcreate ]]; then
          rclone mkdir gdrive:/plexguide/backup/$(cat /var/plexguide/server.id) --config /opt/appdata/plexguide/rclone.conf; fi
     sleep 3

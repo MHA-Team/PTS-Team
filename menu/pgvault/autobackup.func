@@ -60,7 +60,7 @@ badserver() {
 
 #not used yet
 rclonelist() {
-  ls -l /mnt/gdrive/plexguide/backup | grep "^d" | awk '{print $9}' >pgvault.serverlist
+  ls -l /mnt/gdrive/backup | grep "^d" | awk '{print $9}' >pgvault.serverlist
 }
 
 pgboxrecall() {
@@ -122,7 +122,7 @@ buildup() {
 }
 ################################################ FOR BACKUP - END
 serverprime() {
-  tree -d -L 1 /mnt/gdrive/plexguide/backup | awk '{print $2}' | tail -n +2 | head -n -2 >/tmp/server.list
+  tree -d -L 1 /mnt/gdrive/backup | awk '{print $2}' | tail -n +2 | head -n -2 >/tmp/server.list
 
   ### List Out Apps In Readable Order (One's Not Installed)
   num=0
@@ -167,7 +167,7 @@ EOF
   fi
 
   tempserver=$server
-  ls -l /mnt/gdrive/plexguide/backup/$tempserver | awk '{print $9}' | tail -n +2 >/var/plexguide/pgvault.restoreapps
+  ls -l /mnt/gdrive/backup/$tempserver | awk '{print $9}' | tail -n +2 >/var/plexguide/pgvault.restoreapps
 
   ### Blank Out Temp List
   rm -rf /var/plexguide/pgvault.apprecall 1>/dev/null 2>&1
