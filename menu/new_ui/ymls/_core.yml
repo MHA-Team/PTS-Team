@@ -152,7 +152,7 @@
 
 # FOR AUTHENTICATION
 - name: 'Script Execute Part I'
-  shell: 'bash /opt/pgshield/drop.sh'
+  shell: 'bash /opt/plexguide/menu/shield/drop.sh'
 
 - name: 'Script Execute Part II'
   shell: 'cat /var/plexguide/auth.var'
