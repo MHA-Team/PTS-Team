@@ -80,19 +80,19 @@ Configuring PTS fork is the same as configuring PG / PlexGuide.
   
 Then type the following to run the PTS menu: `sudo pts`
 
-* Set up and deploy Traefik ([see here](https://github.com/DomGrieco/PTS-Team/wiki/Traefik))   
+* Set up and deploy Traefik ([see here](https://github.com/PTS-Team/PTS-Team/wiki/Traefik))   
 
-* Close ports using Port Guard ([see here](https://github.com/DomGrieco/PTS-Team/wiki/PTS-Port-Guard))  
+* Close ports using Port Guard ([see here](https://github.com/PTS-Team/PTS-Team/wiki/PTS-Port-Guard))  
 
-* Deploy PTS Shield (GOAuth - all apps supported) [see here](https://github.com/DomGrieco/PTS-Team/wiki/PTS-Shield)
+* Deploy PTS Shield (GOAuth - all apps supported) [see here](https://github.com/PTS-Team/PTS-Team/wiki/PTS-Shield)
 
-* Set up and deploy PTS-Clone. You can restore you backup keys at this stage. [see here](https://github.com/DomGrieco/PTS-Team/wiki/PTS-Clone)
+* Set up and deploy PTS-Clone. You can restore you backup keys at this stage. [see here](https://github.com/PTS-Team/PTS-Team/wiki/PTS-Clone)
 
-* (Optional) Restore PTS backup (created in step 1) using PTS-Vault. [see here](https://github.com/DomGrieco/PTS-Team/wiki/PTS-Vault---Data-Storage)
+* (Optional) Restore PTS backup (created in step 1) using PTS-Vault. [see here](https://github.com/PTS-Team/PTS-Team/wiki/PTS-Vault---Data-Storage)
 
-* Install desired core/community applications (Do this regardless of whether it is a fresh install with restore or overwrite)  [see here](https://github.com/DomGrieco/PTS-Team/wiki/core-apps)
+* Install desired core/community applications (Do this regardless of whether it is a fresh install with restore or overwrite)  [see here](https://github.com/PTS-Team/PTS-Team/wiki/core-apps)
 
-* (Optional) If overwriting/restoring, you will need to change 2 remote path mappings in applications (NZB clients / Torrent clients / radarr / sonarr / lidarr etc)    [see here](https://github.com/DomGrieco/PTS-Team/wiki/Remote-Path-Mappings)
+* (Optional) If overwriting/restoring, you will need to change 2 remote path mappings in applications (NZB clients / Torrent clients / radarr / sonarr / lidarr etc)    [see here](https://github.com/PTS-Team/PTS-Team/wiki/Remote-Path-Mappings)
   
   
 **Why do I need to change remote paths?**  
@@ -121,8 +121,8 @@ PTS  is a **fork** of PG / Plexguide, an all-in-one media solution that deploys 
 
 # 5. Recommended Reading
 
-[**[Click Here]**](https://github.com/DomGrieco/PTS-Team/wiki/Pre-Reading) to view the list!
+[**[Click Here]**](https://github.com/PTS-Team/PTS-Team/wiki/Pre-Reading) to view the list!
 
 ## 6. Having Issues?
 
-[**[Click Here]**](https://github.com/DomGrieco/PTS-Team/wiki/Common-Issues) for more information!
+[**[Click Here]**](https://github.com/PTS-Team/PTS-Team/wiki/Common-Issues) for more information!
