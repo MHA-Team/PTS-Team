@@ -13,7 +13,7 @@
 
     - name: Cloning Community Apps
       git:
-        repo: 'https://github.com/PTS-Team/Apps-Community'
+        repo: 'https://github.com/MHA-Team/Apps-Community'
         dest: /opt/communityapps
         version: 'master'
         force: yes

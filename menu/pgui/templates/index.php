@@ -142,7 +142,7 @@ a:visited {
 </head>
 <body text="#FFFFFF">
 <ul class="navigation">
-    <li><a class="active" href="https://github.com/PTS-Team/PTS-Team/wiki">PTS-Wiki</a></li>
+    <li><a class="active" href="https://github.com/MHA-Team/PTS-Team/wiki">PTS-Wiki</a></li>
     <li><a href="https://discord.gg/cKsMwMZ">Discord</a></li>
 </ul>
 <div class="image">

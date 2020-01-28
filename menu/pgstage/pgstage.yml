@@ -11,7 +11,7 @@
 
     - name: 'Cloning PTS Install files'
       git:
-        repo: 'https://github.com/PTS-Team/Install'
+        repo: 'https://github.com/MHA-Team/Install'
         dest: '/opt/pgstage'
         clone: yes
         version: 'master'

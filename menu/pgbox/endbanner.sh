@@ -88,7 +88,7 @@ EOF
 
   The mappings are on the download client settings (advanced setting), at the bottom of the page.
  
-  Visit https://github.com/PTS-Team/PTS-Team/wiki/Remote-Path-Mappings for more information.
+  Visit https://github.com/MHA-Team/PTS-Team/wiki/Remote-Path-Mappings for more information.
 
 EOF
   fi
@@ -99,7 +99,7 @@ EOF
 
 🌍 Visit the wiki for instructions on how to configure $program.
 
- https://github.com/PTS-Team/PTS-Team/wiki/$program
+ https://github.com/MHA-Team/PTS-Team/wiki/$program
 
 EOF
 fi

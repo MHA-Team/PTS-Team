@@ -49,7 +49,7 @@
       command: rcupdate
       Info: Open rClone update interface
 
-    - name: Install mergerfes updater
+    - name: Install mergerfs updater
       command: mgupdate
       Info: Open mergerfs update interface    
     

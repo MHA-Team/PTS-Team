@@ -7,7 +7,7 @@
 ################################################################################
 mainstart() {
 mkdir -p /opt/ptsupdate 1>/dev/null 2>&1
-git clone --single-branch https://github.com/PTS-Team/PTS-Update.git /opt/ptsupdate 1>/dev/null 2>&1
+git clone --single-branch https://github.com/MHA-Team/PTS-Update.git /opt/ptsupdate 1>/dev/null 2>&1
 chown -cR 100:1000 /opt/ptsupdate 1>/dev/null 2>&1
 chmod -cR 775 /opt/ptsupdate 1>/dev/null 2>&1
 apt-get install dos2unix -yqq && dos2unix /opt/ptsupdate/update.sh 1>/dev/null 2>&1

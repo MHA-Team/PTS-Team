@@ -63,7 +63,7 @@
     - gnupg2
     - curl
     - python3-pip
-    - virtualenv 
+    - virtualenv
     - python3-setuptools
   when: ansible_distribution == 'Debian'
 

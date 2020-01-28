@@ -13,7 +13,7 @@
 
     - name: Cloning GCE Apps
       git:
-        repo: 'https://github.com/PTS-Team/Apps-GCE'
+        repo: 'https://github.com/MHA-Team/Apps-GCE'
         dest: /opt/coreapps
         version: 'master'
         force: yes
