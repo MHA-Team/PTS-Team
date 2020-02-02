@@ -40,6 +40,11 @@ startup() {
   done
 }
 
+autoupdateall() {
+  cp /var/plexguide/program.temp /var/plexguide/pgbox.output
+  appselect
+}
+
 appselect() {
 
   docker ps | awk '{print $NF}' | tail -n +2 >/var/plexguide/pgbox.running
@@ -86,7 +91,7 @@ $buildup
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 EOF
-  read -p '↪️ Type App Name to Queue Auto Updating | Press [ENTER]: ' typed </dev/tty
+  read -p '↪️ Type App Name to Queue Auto Updating | Type ALL to select all | Press [ENTER]: ' typed </dev/tty
 
   if [[ "$typed" == "deploy" || "$typed" == "Deploy" || "$typed" == "DEPLOY" || "$typed" == "install" || "$typed" == "Install" || "$typed" == "INSTALL" || "$typed" == "a" || "$typed" == "A" ]]; then question2; fi
 
@@ -95,21 +100,26 @@ EOF
   current=$(cat /var/plexguide/pgbox.buildup | grep "\<$typed\>")
   if [ "$current" != "" ]; then queued && appselect; fi
 
-  current=$(cat /var/plexguide/program.temp | grep "\<$typed\>")
-  if [ "$current" == "" ]; then badinput && appselect; fi
+  if [[ "$typed" == "all" || "$typed" == "All" || "$typed" == "ALL" ]]; then :;
+  else
+    current=$(cat /var/plexguide/program.temp | grep "\<$typed\>")
+    if [ "$current" == "" ]; then badinput && appselect; fi;
+  fi
 
   queueapp
 }
 
 queueapp() {
-  echo "$typed" >>/var/plexguide/pgbox.buildup
+  if [[ "$typed" == "all" || "$typed" == "All" || "$typed" == "ALL" ]]; then autoupdateall ; else echo "$typed" >>/var/plexguide/pgbox.buildup; fi
+
   num=0
 
-  touch /var/plexguide/pgbox.output && rm -rf /var/plexguide/pgbox.output
+  touch /var/plexguide/pgbox.output && rm -rf /var/plexguide/pgbox.output && touch /var/plexguide/pgbox.output
 
   while read p; do
     echo -n $p >>/var/plexguide/pgbox.output
     echo -n " " >>/var/plexguide/pgbox.output
+    num=$((num + 1))
     if [[ "$num" == 7 ]]; then
       num=0
       echo " " >>/var/plexguide/pgbox.output
