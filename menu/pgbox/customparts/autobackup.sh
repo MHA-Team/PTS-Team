@@ -23,11 +23,11 @@ badinput() {
 }
 
 startup() {
-  rm -rf /var/plexguide/pgbox.output 1>/dev/null 2>&1
+  rm -rf /var/plexguide/pgupdater.output 1>/dev/null 2>&1
   rm -rf /var/plexguide/pgbox.buildup 1>/dev/null 2>&1
   rm -rf /var/plexguide/program.temp 1>/dev/null 2>&1
   rm -rf /var/plexguide/app.list 1>/dev/null 2>&1
-  touch /var/plexguide/pgbox.output
+  touch /var/plexguide/pgupdater.output
   touch /var/plexguide/program.temp
   touch /var/plexguide/app.list
   touch /var/plexguide/pgbox.buildup
@@ -41,7 +41,7 @@ startup() {
 }
 
 autoupdateall() {
-  cp /var/plexguide/program.temp /var/plexguide/pgbox.output
+  cp /var/plexguide/program.temp /var/plexguide/pgupdater.output
   appselect
 }
 
@@ -67,7 +67,7 @@ appselect() {
   done </var/plexguide/app.list
 
   notrun=$(cat /var/plexguide/program.temp)
-  buildup=$(cat /var/plexguide/pgbox.output)
+  buildup=$(cat /var/plexguide/pgupdater.output)
 
   if [ "$buildup" == "" ]; then buildup="NONE"; fi
   tee <<-EOF
@@ -114,15 +114,15 @@ queueapp() {
 
   num=0
 
-  touch /var/plexguide/pgbox.output && rm -rf /var/plexguide/pgbox.output && touch /var/plexguide/pgbox.output
+  touch /var/plexguide/pgupdater.output && rm -rf /var/plexguide/pgupdater.output && touch /var/plexguide/pgupdater.output
 
   while read p; do
-    echo -n $p >>/var/plexguide/pgbox.output
-    echo -n " " >>/var/plexguide/pgbox.output
+    echo -n $p >>/var/plexguide/pgupdater.output
+    echo -n " " >>/var/plexguide/pgupdater.output
     num=$((num + 1))
     if [[ "$num" == 7 ]]; then
       num=0
-      echo " " >>/var/plexguide/pgbox.output
+      echo " " >>/var/plexguide/pgupdater.output
     fi
   done </var/plexguide/pgbox.buildup
 

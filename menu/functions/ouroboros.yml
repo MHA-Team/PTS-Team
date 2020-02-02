@@ -7,16 +7,27 @@
   gather_facts: false
   tasks:
     # FACTS #######################################################################
+    - name: 'Ensure Monitors File Exists'
+      copy:
+        content: ''
+        dest: '/var/plexguide/pgupdater.output'
+        force: 'no'
+        group: '1000'
+        owner: '1000'
+        mode: '0755'
+
+    - name: 'Register Monitor List'
+      shell: 'cat /var/plexguide/pgupdater.output'
+      register: 'pgupdater'
+
     - name: 'Set Known Facts'
       set_fact:
         pgrole: 'ouroboros'
-        monitors: "{{ lookup('file', '/var/plexguide/pgbox.output') }}"
     - name: 'Setting {{pgrole}} Volumes'
       set_fact:
         pg_volumes:
           - '/var/run/docker.sock:/var/run/docker.sock'
           - '/etc/localtime:/etc/localtime:ro'
-
     - name: 'Setting {{pgrole}} ENV'
       set_fact:
         pg_env:
@@ -25,7 +36,7 @@
           INTERVAL: '86400' #cEvery 24 hours in seconds
           LOG_LEVEL: 'info'
           SELF_UPDATE: 'true'
-          MONITOR: '{{ monitors }}' #Can set to specific container only see wiki for details (https://github.com/pyouroboros/ouroboros/wiki/Usage#monitor)
+          MONITOR: '{{pgupdater.stdout}}' #Can set to specific container only see wiki for details (https://github.com/pyouroboros/ouroboros/wiki/Usage#monitor)
           IGNORE: 'mariadb influxdb mongo postgres'
           LABELS_ONLY: 'false' #https://github.com/pyouroboros/ouroboros/wiki/Usage#label-enable
           LABEL_ENABLE: 'false'
