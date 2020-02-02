@@ -43,7 +43,7 @@ EOF
   2) bash /opt/plexguide/menu/pgbox/community/community.sh ;;
   3) bash /opt/plexguide/menu/pgbox/personal/personal.sh ;;
   4) bash /opt/plexguide/menu/pgbox/remove/removal.sh ;;
-  5) bash /opt/plexguide/menu/pgbox/remove/autobackup.sh ;;
+  5) bash /opt/plexguide/menu/pgbox/customparts/autobackup.sh ;;
   z) exit ;;
   Z) exit ;;
   *) GCEtest ;;
