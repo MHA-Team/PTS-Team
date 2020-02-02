@@ -18,7 +18,7 @@ mainstart1() {
   tee <<-EOF
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🚀 Box Apps Interface Selection    
+🚀 Box Apps Interface Selection
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 💬  PTS Box installs a series of Core and Community applications!
@@ -28,6 +28,7 @@ mainstart1() {
 --------------------------------
 [3] Apps         : Personal Forks
 [4] Apps         : Removal
+[5] Apps         : Auto Update
 
 [Z] Exit
 
@@ -42,6 +43,7 @@ EOF
   2) bash /opt/plexguide/menu/pgbox/community/community.sh ;;
   3) bash /opt/plexguide/menu/pgbox/personal/personal.sh ;;
   4) bash /opt/plexguide/menu/pgbox/remove/removal.sh ;;
+  5) bash /opt/plexguide/menu/pgbox/remove/autobackup.sh ;;
   z) exit ;;
   Z) exit ;;
   *) GCEtest ;;
@@ -52,7 +54,7 @@ mainstart2() {
   tee <<-EOF
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🚀 GCE APPS optimized Apps    
+🚀 GCE APPS optimized Apps
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 [1] PTS GCE optimized Apps : GCE APPS
