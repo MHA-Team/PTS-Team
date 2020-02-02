@@ -91,7 +91,7 @@ EOF
 sleep 1.5
 ##check for running docker 
 drunning=$(docker ps --format '{{.Names}}' | grep "$typed")
-if [[ "$running" == "$typed" ]]; then
+if [[ "$drunning" == "$typed" ]]; then
 tee <<-EOF
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -103,7 +103,7 @@ EOF
 	 rm -rf /opt/appdata/$typed
 fi
 
-if [[ "$running" != "$typed" ]]; then
+if [[ "$drunning" != "$typed" ]]; then
 tee <<-EOF
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
