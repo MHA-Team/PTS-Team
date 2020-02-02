@@ -32,6 +32,9 @@ startup() {
   touch /var/plexguide/app.list
   touch /var/plexguide/pgbox.buildup
 
+  docker ps | awk '{print $NF}' | tail -n +2 >/var/plexguide/pgbox.running
+  docker ps | awk '{print $NF}' | tail -n +2 >/var/plexguide/app.list
+
   file="/opt/coreapps/place.holder"
   waitvar=0
   while [ "$waitvar" == "0" ]; do
@@ -47,14 +50,20 @@ autoupdateall() {
 
 appselect() {
 
-  docker ps | awk '{print $NF}' | tail -n +2 >/var/plexguide/pgbox.running
-  docker ps | awk '{print $NF}' | tail -n +2 >/var/plexguide/app.list
+#  docker ps | awk '{print $NF}' | tail -n +2 >/var/plexguide/pgbox.running
+#  docker ps | awk '{print $NF}' | tail -n +2 >/var/plexguide/app.list
 
   ### Clear out temp list
   rm -rf /var/plexguide/program.temp && touch /var/plexguide/program.temp
 
   ### List out installed apps
   num=0
+  sed -i -e "/templates/d" /var/plexguide/app.list
+  sed -i -e "/image/d" /var/plexguide/app.list
+  sed -i -e "/ouroboros/d" /var/plexguide/app.list
+  sed -i -e "/oath/d" /var/plexguide/app.list
+  sed -i -e "/oauth/d" /var/plexguide/app.list
+  sed -i -e "/traefik/d" /var/plexguide/app.list
   p="/var/plexguide/pgbox.running"
   while read p; do
     echo -n $p >>/var/plexguide/program.temp
